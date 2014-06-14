@@ -73,6 +73,7 @@
         <module>presto-server</module>
         <module>presto-docs</module>
         <module>presto-verifier</module>
+        <module>presto-kafka</module>
     </modules>
 
     <dependencyManagement>

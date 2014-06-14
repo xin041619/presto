@@ -13,13 +13,9 @@
  */
 package com.facebook.presto.metadata;
 
-import com.facebook.presto.connector.ConnectorManager;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.io.Files;
-import io.airlift.log.Logger;
-
-import javax.inject.Inject;
+import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.checkState;
+import static com.google.common.collect.Maps.fromProperties;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,9 +25,14 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
-import static com.google.common.collect.Maps.fromProperties;
+import javax.inject.Inject;
+
+import com.facebook.presto.connector.ConnectorManager;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.io.Files;
+
+import io.airlift.log.Logger;
 
 public class CatalogManager
 {
